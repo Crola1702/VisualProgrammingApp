@@ -1,9 +1,5 @@
 package VPABooleans
 
-import (
-	"Crola1702/Backend/VisualProgrammingApp/VPANodes/VPAArithmetic"
-)
-
 type Operable interface {
 	Operation() interface{}
 }
@@ -20,8 +16,8 @@ const (
 
 type BooleanNode struct {
 	Id            string
-	In1           *VPAArithmetic.NumberNode
-	In2           *VPAArithmetic.NumberNode
+	In1           Operable
+	In2           Operable
 	OperationType int
 	Not           bool
 }

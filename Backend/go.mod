@@ -1,3 +1,3 @@
-module Crola1702/Backend/VisualProgrammingApp
+module Backend
 
 go 1.17

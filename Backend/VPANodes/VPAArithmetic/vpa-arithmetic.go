@@ -1,6 +1,8 @@
 package VPAArithmetic
 
-import "math"
+import (
+	"math"
+)
 
 type Operable interface {
 	Operation() interface{}
