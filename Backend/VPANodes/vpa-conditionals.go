@@ -1,8 +1,4 @@
-package VPAConditionalsCicles
-
-type Operable interface {
-	Operation() interface{}
-}
+package VPANodes
 
 type ExecuteBlock struct {
 	Statements []interface{ Operation() interface{} }

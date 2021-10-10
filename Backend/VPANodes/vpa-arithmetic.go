@@ -1,12 +1,8 @@
-package VPAArithmetic
+package VPANodes
 
 import (
 	"math"
 )
-
-type Operable interface {
-	Operation() interface{}
-}
 
 type NumberNode struct {
 	Id  string

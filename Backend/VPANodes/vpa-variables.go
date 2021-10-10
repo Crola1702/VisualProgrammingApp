@@ -1,4 +1,4 @@
-package VPAVariables
+package VPANodes
 
 import (
 	"errors"

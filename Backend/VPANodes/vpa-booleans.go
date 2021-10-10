@@ -1,8 +1,4 @@
-package VPABooleans
-
-type Operable interface {
-	Operation() interface{}
-}
+package VPANodes
 
 const (
 	_ int = iota
