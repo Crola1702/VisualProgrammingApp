@@ -13,8 +13,8 @@ func (b *ExecuteBlock) Operation() {
 type IfNode struct {
 	Id        string
 	Condition Operable
-	Block     ExecuteBlock
-	ElseBlock ExecuteBlock
+	Block     *ExecuteBlock
+	ElseBlock *ExecuteBlock
 }
 
 func (n *IfNode) Operation() {
@@ -28,7 +28,7 @@ func (n *IfNode) Operation() {
 type WhileNode struct {
 	Id        string
 	Condition Operable
-	Block     Operable
+	Block     *ExecuteBlock
 }
 
 func (n *WhileNode) Operation() {
