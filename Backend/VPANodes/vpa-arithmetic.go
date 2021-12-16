@@ -1,9 +1,14 @@
+// Package VPANodes provides a set of blocks to create any type of
+// program in this Visual Programming app
 package VPANodes
 
 import (
 	"math"
 )
 
+// NumberNode represents a node that contains an input
+// related to a float number. The operation returns
+// the asociated number with it.
 type NumberNode struct {
 	Id  string
 	In1 float64
@@ -23,6 +28,9 @@ const (
 	Mod
 )
 
+// AritmethicNode represents an aritmetic operation
+// like '+' '-' '*' '/' '^' and '%' between two other
+// nodes.
 type AritmethicNode struct {
 	Id            string
 	In1           Operable

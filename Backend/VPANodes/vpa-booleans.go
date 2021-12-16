@@ -1,3 +1,5 @@
+// Package VPANodes provides a set of blocks to create any type of
+// program in this Visual Programming app
 package VPANodes
 
 const (
@@ -10,6 +12,8 @@ const (
 	Ge
 )
 
+// BooleanNode represents a boolean type. It compares its inputs
+// by a boolean operator like 'and', 'or', 'equals'
 type BooleanNode struct {
 	Id            string
 	In1           Operable
@@ -51,6 +55,8 @@ const (
 	Xor
 )
 
+// BooleanOperator represents an 'and', 'or', 'xor' operators between
+// two BooleanNodes.
 type BooleanOperator struct {
 	Id            string
 	In1           BooleanNode

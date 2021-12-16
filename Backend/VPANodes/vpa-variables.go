@@ -1,3 +1,5 @@
+// IfNode represents an if control statement. It receives a condition (BooleanNode
+// or BooleanOperator), an ExecuteBlock and an ElseBlock
 package VPANodes
 
 import (
@@ -8,25 +10,31 @@ type Operable interface {
 	Operation() interface{}
 }
 
+// Variable represents a variable with a Name and a Value with any type
 type Variable struct {
 	Name  string
 	Value interface{}
 }
 
+// AssignNode represents an asignment operation of a variable.
 type AssignNode struct {
 	Id           string
 	VariableName string
 	In1          Operable
 	VarManager   *VariableManager
 }
+
 func (an *AssignNode) Operation() interface{} {
 	return an.VarManager.AssignVariable(an.VariableName, an.In1.Operation())
 }
 
+// VariableNode is the node representation of a variable. It requires the name of
+// an existing variable and the system VariableManager
 type VariableNode struct {
 	VariableName string
-	VarManager *VariableManager
+	VarManager   *VariableManager
 }
+
 func (vn *VariableNode) Operation() interface{} {
 	res, ok := vn.VarManager.GetVariable(vn.VariableName)
 	if ok != nil {
@@ -35,9 +43,11 @@ func (vn *VariableNode) Operation() interface{} {
 	return res.Value
 }
 
+// VariableManager is a map of variable names and variable values
 type VariableManager struct {
 	SystemVariables map[string]Variable
 }
+
 func (vm *VariableManager) GetVariable(name string) (Variable, error) {
 	v, ok := vm.SystemVariables[name]
 	if !ok {

@@ -1,8 +1,9 @@
 package main
 
 import (
-	"Backend/VPANodes"
 	"fmt"
+
+	"backend/VPANodes"
 )
 
 var variables = VPANodes.VariableManager{SystemVariables: make(map[string]VPANodes.Variable)}
