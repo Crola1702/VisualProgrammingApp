@@ -10,8 +10,8 @@ import (
 // related to a float number. The operation returns
 // the asociated number with it.
 type NumberNode struct {
-	Id  string
-	In1 float64
+	Id  int     `json:"id"`
+	In1 float64 `json:"in1"`
 }
 
 func (n *NumberNode) Operation() interface{} {
@@ -32,10 +32,10 @@ const (
 // like '+' '-' '*' '/' '^' and '%' between two other
 // nodes.
 type AritmethicNode struct {
-	Id            string
-	In1           Operable
-	In2           Operable
-	OperationType int
+	Id            int      `json:"id"`
+	In1           Operable `json:"in1"`
+	In2           Operable `json:"in2"`
+	OperationType int      `json:"operationType"`
 }
 
 func (n *AritmethicNode) Operation() interface{} {

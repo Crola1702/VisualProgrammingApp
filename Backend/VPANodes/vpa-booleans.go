@@ -15,11 +15,11 @@ const (
 // BooleanNode represents a boolean type. It compares its inputs
 // by a boolean operator like 'and', 'or', 'equals'
 type BooleanNode struct {
-	Id            string
-	In1           Operable
-	In2           Operable
-	OperationType int
-	Not           bool
+	Id            int      `json:"id"`
+	In1           Operable `json:"in1"`
+	In2           Operable `json:"in2"`
+	OperationType int      `json:"operationType"`
+	Not           bool     `json:"not"`
 }
 
 func (b *BooleanNode) Operation() interface{} {
@@ -58,11 +58,11 @@ const (
 // BooleanOperator represents an 'and', 'or', 'xor' operators between
 // two BooleanNodes.
 type BooleanOperator struct {
-	Id            string
-	In1           BooleanNode
-	In2           BooleanNode
-	OperationType int
-	Not           bool
+	Id            int         `json:"id"`
+	In1           BooleanNode `json:"in1"`
+	In2           BooleanNode `json:"in2"`
+	OperationType int         `json:"operationType"`
+	Not           bool        `json:"not"`
 }
 
 func (b *BooleanOperator) Operation() interface{} {

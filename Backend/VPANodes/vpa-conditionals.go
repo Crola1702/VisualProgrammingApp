@@ -17,10 +17,10 @@ func (b *ExecuteBlock) Operation() {
 // IfNode represents an if control statement. It receives a condition (BooleanNode
 // or BooleanOperator), an ExecuteBlock and an ElseBlock
 type IfNode struct {
-	Id        string
-	Condition Operable
-	Block     *ExecuteBlock
-	ElseBlock *ExecuteBlock
+	Id        int           `json:"id"`
+	Condition Operable      `json:"condition"`
+	Block     *ExecuteBlock `json:"block"`
+	ElseBlock *ExecuteBlock `json:"elseBlock"`
 }
 
 func (n *IfNode) Operation() {
@@ -34,9 +34,9 @@ func (n *IfNode) Operation() {
 // IfNode represents a while control statement. It receives a condition (BooleanNode
 // or BooleanOperator) and an ExecuteBlock
 type WhileNode struct {
-	Id        string
-	Condition Operable
-	Block     *ExecuteBlock
+	Id        int           `json:"id"`
+	Condition Operable      `json:"condition"`
+	Block     *ExecuteBlock `json:"block"`
 }
 
 func (n *WhileNode) Operation() {
